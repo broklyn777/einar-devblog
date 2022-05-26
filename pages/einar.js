@@ -16,7 +16,7 @@ export default function einar({ posts }) {
                                     <h5 className="text-xl text-[#212529] font-medium mb-2">{post.frontMatter.title}</h5>
                                     <p className="text-base font-normal text-[#212529]">{post.frontMatter.description}</p>
                                     <p className="text-[#6c757d] text-base">
-                                        <small className="text-[#6c757d] text-sm">{post.frontMatter.date}</small>
+                                        <small className="text-[#6c757d] text-sm">{post.frontMatter.tags}</small>
                                     </p>
                                 </div>
                             </div>
@@ -55,6 +55,7 @@ export const getStaticProps = async () => {
             frontMatter,
             slug: filename.split('.')[0]
         }
+
 
     })
     return {
