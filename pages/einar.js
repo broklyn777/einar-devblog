@@ -14,7 +14,7 @@ export default function einar({ posts }) {
     return (
 
         <>
-            <h1 className="text-2xl pl-4 text-left font-medium leading-9 tracking-tight text-[#14B8A6]  sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+            <h1 className="text-2xl pl-4 text-left font-medium leading-9 tracking-tight text-primary-500 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
                 Alla lekar
             </h1>
 
@@ -26,7 +26,7 @@ export default function einar({ posts }) {
                         type="text"
                         // onChange={(e) => setSearchValue(e.target.value)}
                         placeholder="Sök lekar ..."
-                        className="block w-full rounded-md border border-grey-200 bg-white px-4 py-2 text-gray-900 focus:border-[#14B8A6] focus:ring-[#14B8A6] dark:border-[#14B8A6]  dark:bg-gray-800 dark:text-gray-100"
+                        className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
                     />
                     <svg
                         className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
