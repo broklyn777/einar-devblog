@@ -13,7 +13,7 @@ export default function Search() {
       } else {
         const res = await fetch(`/api/search?q=${searchTerm}`)
         const { results } = await res.json()
-        console.log(results);
+        // console.log(results);
         setSearchResults(results)
       }
     }
@@ -33,7 +33,7 @@ export default function Search() {
               className='bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none w-72'
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder='sök ......'
+              placeholder='sök artikel ......'
             />
 
             <FaSearch className='absolute top-0 right-0 text-black mt-3 mr-4' />
