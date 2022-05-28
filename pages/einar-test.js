@@ -3,9 +3,7 @@ import * as path from 'path'
 import matter from "gray-matter"
 import Link from "next/link"
 import Image from "next/image"
-
-
-
+import Search from "/components/Search"
 
 
 
@@ -17,6 +15,7 @@ export default function einar({ posts }) {
             <h1 className="text-2xl text-teal-500 pl-4 text-left font-medium leading-9 tracking-tight text-teal-500sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
                 Alla lekar
             </h1>
+            <Search />
 
             <div className="space-y-2 p-4 pt-6 pb-8 md:space-y-5">
 
@@ -24,7 +23,7 @@ export default function einar({ posts }) {
                     <input
                         aria-label="Sök lekar"
                         type="text"
-                        // onChange={(e) => setSearchValue(e.target.value)}
+                        onChange={(e) => setSearchValue(e.target.value)}
                         placeholder="Sök lekar ..."
                         className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-teal-500 focus:ring-teal-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
                     />

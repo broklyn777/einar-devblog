@@ -16,12 +16,11 @@ const Nav = () => {
         <p className="ms-5 pointer lead my-auto">/einar</p>
       </Link>
       </div>
+
 <div className='flex space-x-4 text-lg'>
-      <Link href="/bio" passHref>
-        <p className="ms-5 pointer lead my-auto"></p>
-      </Link>
-      <Link href="/einar" passHref>
-        <p className="ms-5 pointer lead my-auto"></p>
+     
+      <Link href="/einar-test" passHref>
+        <p className="ms-5 pointer lead my-auto">/einar-test</p>
       </Link>
       </div>
     

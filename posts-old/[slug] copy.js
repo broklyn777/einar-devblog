@@ -44,7 +44,7 @@ const getStaticPaths = async () => {
 
 const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMeta = fs.readFileSync(path.join('posts',
-    slug + '.mdx'), 'utf-8')
+    slug + '.mdx'))
 
   const { data: frontMatter, content } = matter(markdownWithMeta)
   const mdxSource = await serialize(content)
