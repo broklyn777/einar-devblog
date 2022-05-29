@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import Layout from '@/components/Layout'
-import Post from '@/components/Post-copy'
+import Post from '@/components/Post'
 import Pagination from '@/components/Pagination'
 import CategoryList from '@/components/CategoryList'
 import { POSTS_PER_PAGE } from '@/config/index'
