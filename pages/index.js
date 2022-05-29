@@ -3,10 +3,12 @@ import path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
 import Image from 'next/image'
+import Search from '@/components/Search'
 
 const Home = ({ posts }) => {
   return (
     <div className="mt-5">
+      <Search />
       {posts.map((post, index) => (
         <Link href={'/blog/' + post.slug} passHref key={index}>
           <div className="card mb-3 cursor-pointer" style={{ maxWidth: '540px' }}>

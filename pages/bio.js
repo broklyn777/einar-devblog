@@ -4,6 +4,7 @@ const Bio = () => {
       <p className="display-4 text-center">Fullstacker Einar</p>
       <p className="text-center">Om oss kommer här</p>
     </div>
+
   )
 }
 

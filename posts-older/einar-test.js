@@ -1,9 +1,10 @@
-import fs from "fs"
+import fs from 'fs'
 import * as path from 'path'
 import matter from "gray-matter"
 import Link from "next/link"
 import Image from "next/image"
 import Search from "/components/Search"
+import { getPosts } from '@/lib/posts'
 
 
 
@@ -17,32 +18,7 @@ export default function einar({ posts }) {
             </h1>
             <Search />
 
-            <div className="space-y-2 p-4 pt-6 pb-8 md:space-y-5">
 
-                <div className="relative max-w-lg">
-                    <input
-                        aria-label="Sök lekar"
-                        type="text"
-                        onChange={(e) => setSearchValue(e.target.value)}
-                        placeholder="Sök lekar ..."
-                        className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-teal-500 focus:ring-teal-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
-                    />
-                    <svg
-                        className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                    </svg>
-                </div>
-            </div>
             <div className='mt-5'>
                 {posts.map((post, index) => (
 
@@ -51,16 +27,16 @@ export default function einar({ posts }) {
                             <div className="gap-y-4 flex w-full pl-3  bg-white rounded-lg shadow-md mt-6">
                                 <div className="flex w-4/6 ">
                                     <div className="grow shrink basis-auto p-4">
-                                        <h5 className="text-xl text-[#212529] font-medium mb-2">{post.frontMatter.title}</h5>
-                                        <p className="text-base font-normal text-[#212529]">{post.frontMatter.description}</p>
+                                        <h5 className="text-xl text-[#212529] font-medium mb-2">{post.frontmatter.title}</h5>
+                                        <p className="text-base font-normal text-[#212529]">{post.frontmatter.description}</p>
                                         <p className="text-[#6c757d] text-base">
-                                            <small className="text-[#6c757d] text-sm">{post.frontMatter.tags}</small>
+                                            <small className="text-[#6c757d] text-sm">{post.frontmatter.category}</small>
                                         </p>
                                     </div>
                                 </div>
                                 <div className="flex w-1/3 basis-auto grow-0 shrink-0">
                                     <Image
-                                        src={post.frontMatter.thumbnailUrl}
+                                        src={post.frontmatter.thumbnailUrl}
                                         className="relative rounded-md p-1 m-0 max-w-full inline-block overflow-hidden box-border"
                                         alt="thumbnail"
                                         width={500}
@@ -79,6 +55,8 @@ export default function einar({ posts }) {
     )
 }
 
+
+
 export const getStaticProps = async () => {
     const files = fs.readdirSync(path.join('posts'))
 
@@ -86,10 +64,10 @@ export const getStaticProps = async () => {
 
         const markDownWithMeta = fs.readFileSync(path.join('posts', filename))
 
-        const { data: frontMatter } = matter(markDownWithMeta)
+        const { data: frontmatter } = matter(markDownWithMeta)
 
         return {
-            frontMatter,
+            frontmatter,
             slug: filename.split('.')[0]
         }
 
@@ -97,7 +75,7 @@ export const getStaticProps = async () => {
     })
     return {
         props: {
-            posts
+            posts: getPosts().slice(0, 6),
         }
     }
 

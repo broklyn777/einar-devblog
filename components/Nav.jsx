@@ -6,7 +6,7 @@ const Nav = () => {
     {/* <nav className=" flex flex1  border-b flex-wrap justify-between cursor-pointer p-3 py-8 space-x-5 "> */}
       
       <Link href="/" passHref>
-        <h2 className="text-3xl cursor-pointer">funny games</h2>
+        <h2 className="text-3xl cursor-pointer">einars <span className='border-b-2'>devBlog</span> </h2>
       </Link>
 <div className='flex space-x-4 text-lg'>
       <Link href="/bio" passHref>
@@ -19,9 +19,13 @@ const Nav = () => {
 
 <div className='flex space-x-4 text-lg'>
      
-      <Link href="/einar-test" passHref>
-        <p className="ms-5 pointer lead my-auto">/einar-test</p>
+      <Link href="/dev" passHref>
+        <p className="ms-5 pointer lead my-auto">/dev</p>
       </Link>
+    
+<Link href="/blogga" passHref>
+        <p className="ms-5 pointer lead my-auto">/blogga</p>
+      </Link> 
       </div>
     
     </nav>
