@@ -17,9 +17,9 @@ const PostPage = ({ frontMatter: { title, date }, mdxSource }) => {
   return (
     <SectionContainer>
       <div className="mt-4 ">
-        <PageTitle>{title}</PageTitle>
-        <div className="prose">
 
+        <div className="prose">
+          <PageTitle>{title}</PageTitle>
           <MDXRemote {...mdxSource} components={components} />
         </div>
       </div>

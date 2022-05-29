@@ -2,6 +2,7 @@
 import '../styles/globals.css'
 import Nav from '../components/Nav'
 import Head from 'next/head'
+import Layout from '@/components/Layout'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,8 +17,8 @@ function MyApp({ Component, pageProps }) {
           crossOrigin="anonymous" /> */}
         </Head>
 
-        <Nav />
 
+        <Nav />
         <Component {...pageProps} />
 
       </div>

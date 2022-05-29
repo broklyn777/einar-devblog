@@ -19,3 +19,28 @@
     @apply cursor-pointer text-sm font-light text-[#e5e5e5] transition duration-[.4s] hover:text-[#b3b3b3];
   }
 }
+
+
+/* Fix category colors in production */
+.bg-yellow-600 {
+  background-color: #d97705;
+}
+
+.bg-blue-600 {
+  background: #3929eb;
+}
+
+.bg-green-600 {
+  background-color: #049669;
+}
+
+.bg-purple-600 {
+  background-color: #7730db;
+}
+
+.bg-red-600 {
+  background-color: #a70b34;
+}
+.bg-cyan-600 {
+  background-color: #0891B2 ;
+}

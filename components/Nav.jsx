@@ -2,13 +2,13 @@ import Link from 'next/link'
 
 const Nav = () => {
   return (
-    <nav className=" flex flex1  flex-wrap justify-between cursor-pointer p-4 py-8 space-x-5 ">
-    {/* <nav className=" flex flex1  border-b flex-wrap justify-between cursor-pointer p-3 py-8 space-x-5 "> */}
+    <nav className=" flex flex1  flex-wrap justify-between cursor-pointer p-4 py-12 space-x-8 ">
+     {/* <nav className=" flex flex1  border-b flex-wrap justify-between cursor-pointer p-3 py-8 space-x-5 "> */}
       
       <Link href="/" passHref>
         <h2 className="text-3xl cursor-pointer">einars <span className='border-b-2'>devBlog</span> </h2>
       </Link>
-<div className='flex space-x-4 text-lg'>
+<div className='flex space-x-4  text-xl'>
       <Link href="/bio" passHref>
         <p className="ms-5 pointer lead my-auto">/om oss</p>
       </Link>
@@ -17,11 +17,11 @@ const Nav = () => {
       </Link>
       </div>
 
-<div className='flex space-x-4 text-lg'>
+<div className='flex space-x-4 text-xl'>
      
-      <Link href="/dev" passHref>
+      {/* <Link href="/dev" passHref>
         <p className="ms-5 pointer lead my-auto">/dev</p>
-      </Link>
+      </Link> */}
     
 <Link href="/blogga" passHref>
         <p className="ms-5 pointer lead my-auto">/blogga</p>
@@ -33,5 +33,4 @@ const Nav = () => {
 }
 
 export default Nav
-
 

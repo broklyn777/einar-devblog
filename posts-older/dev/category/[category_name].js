@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
-import Post from '@/components/Post'
+import Post from '@/components/Post-copy'
 import CategoryList from '@/components/CategoryList'
 import matter from 'gray-matter'
 import { getPosts } from '@/lib/posts'
@@ -12,7 +12,7 @@ export default function CategoryBlogPage({ posts, categoryName, categories }) {
     <Layout>
       <div className='flex justify-between'>
         <div className='w-3/4 mr-10'>
-          <h1 className='text-5xl border-b-4 p-5 font-bold'>
+          <h1 className='text-5xl border-b-4 p-5 font-semibold'>
             Posts in {categoryName}
           </h1>
 

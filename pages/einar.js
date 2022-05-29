@@ -10,7 +10,8 @@ import Image from "next/image"
 
 
 
-export default function einar({ posts }) {
+
+export default function einar({ posts, }) {
     return (
 
         <>
@@ -54,9 +55,7 @@ export default function einar({ posts }) {
                                     <div className="grow shrink basis-auto p-4">
                                         <h5 className="text-xl text-[#212529] font-medium mb-2">{post.frontMatter.title}</h5>
                                         <p className="text-base font-normal text-[#212529]">{post.frontMatter.description}</p>
-                                        <p className="text-[#6c757d] text-base">
-                                            <small className="text-[#6c757d] text-sm">{post.frontMatter.tags}</small>
-                                        </p>
+
                                     </div>
                                 </div>
                                 <div className="flex w-1/3 basis-auto grow-0 shrink-0">
