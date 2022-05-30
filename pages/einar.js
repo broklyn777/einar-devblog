@@ -19,7 +19,7 @@ export default function einar({ posts, }) {
                 Alla lekar
             </h1>
 
-            <div className="space-y-2 p-4 pt-6 pb-8 md:space-y-5">
+            {/* <div className="space-y-2 p-4 pt-6 pb-8 md:space-y-5">
 
                 <div className="relative max-w-lg">
                     <input
@@ -44,7 +44,7 @@ export default function einar({ posts, }) {
                         />
                     </svg>
                 </div>
-            </div>
+            </div> */}
             <div className='mt-5'>
                 {posts.map((post, index) => (
 

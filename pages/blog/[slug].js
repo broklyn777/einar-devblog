@@ -27,21 +27,7 @@ const PostPage = ({ frontMatter: { title, date }, mdxSource }) => {
 
 
         <div className="">
-          {/* 
-          <header className="pt-6 xl:pb-6">
-            <div className="space-y-1 text-center">
-              <dl className="space-y-10">
-                <div>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <h3>Time</h3>
-                  </dd>
-                </div>
-              </dl>
-              <div>
-                <PageTitle>{title}</PageTitle>
-              </div>
-            </div>
-          </header> */}
+
 
           <div className="pt-6 pb-10 border-b text-center xl:pt-11 ">
             <div className='pb-10'>

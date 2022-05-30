@@ -7,6 +7,7 @@ export default function CategoryLabel({ children }) {
     React: 'green',
     Next: 'cyan',
     MDX: 'mdxYellow',
+    Tailwind: 'red',
   }
 
   return (
