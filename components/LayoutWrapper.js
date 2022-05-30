@@ -15,7 +15,7 @@ const LayoutWrapper = ({ children }) => {
     <SectionContainer>
 
       <div className="flex h-screen flex-col justify-between">
-        <nav className=" flex flex1 pt-8 flex-wrap justify-between cursor-pointer  space-x-8 ">
+        <nav className=" flex flex1 py-8 flex-wrap justify-between cursor-pointer  space-x-8 ">
           {/* <nav className=" flex flex1  border-b flex-wrap justify-between cursor-pointer p-3 py-8 space-x-5 "> */}
 
           <Link href="/" passHref>
