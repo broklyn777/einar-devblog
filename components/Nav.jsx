@@ -3,9 +3,9 @@ import Link from 'next/link'
 const Nav = () => {
   return (
 
-    <div className='py-10 max-w-3xl' >
+   
     
-    <nav className=" flex flex1  flex-wrap justify-between cursor-pointer  space-x-8 ">
+    <nav className=" flex flex1 py-10 flex-wrap justify-between cursor-pointer  space-x-8 ">
      {/* <nav className=" flex flex1  border-b flex-wrap justify-between cursor-pointer p-3 py-8 space-x-5 "> */}
       
       <Link href="/" passHref>
@@ -32,7 +32,7 @@ const Nav = () => {
       </div>
     
     </nav>
-    </div>
+
   )
 }
 
