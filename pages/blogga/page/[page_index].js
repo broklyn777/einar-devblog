@@ -17,7 +17,7 @@ export default function BlogPage({ posts, numPages, currentPage, categories }) {
         <div className='w-3/4 mr-10'>
           <h1 className='text-5xl text-teal-500 border-b-4 p-5 font-semibold'>/blogg</h1>
 
-          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
+          <div className='grid md:grid-cols-2  gap-5'>
             {posts.map((post, index) => (
               <Post key={index} post={post} />
             ))}

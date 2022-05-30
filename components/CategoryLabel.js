@@ -5,8 +5,8 @@ export default function CategoryLabel({ children }) {
     Inomhus: 'yellow',
     CSS: 'blue',
     React: 'green',
-    next: 'cyan',
-    Ruby: 'red',
+    Next: 'cyan',
+    MDX: 'mdxYellow',
   }
 
   return (
