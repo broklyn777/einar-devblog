@@ -1,6 +1,12 @@
 import Image from '@/components/Image'
 import Link from '@/components/Link'
-import { SiGoogleads, SiReact, SiWebdriverio } from 'react-icons/si'
+import { SiGoogleads } from 'react-icons/si'
+import NewsletterForm from './NewsletterForm-d'
+import siteMetadata from '@/data/siteMetadata'
+import EmailCTA from './EmailCTA'
+
+
+
 
 const Hero = () => {
   return (
@@ -47,77 +53,13 @@ const Hero = () => {
           </a>
         </Link>
       </div>
-      <div className="py-12 grid grid-cols-1 gap-8 grid-rows-3">
-        <div className="grid gap-8 items-start my-2">
-          <div className="relative group">
-            <div className="absolute -inset-0.5 bg-sky-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <Link href="/bio">
-              <a className="relative px-7 py-4 bg-white dark:bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600">
-                <span className="flex items-center space-x-5">
-                  < SiGoogleads className=" text-rose-600 " />
-                  <span className="pr-6 text-gray-900 dark:text-gray-500">
-                    Vill du synas bättre på Google?
-                  </span>
-                </span>
-                <span className="pl-6 text-amber-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition duration-200">
-                  Kontakt &rarr;
-                </span>
-              </a>
-            </Link>
-          </div>
-        </div>
-        <div className="grid gap-8 items-start my-2">
-          <div className="relative group">
-            <div className="absolute -inset-0.5 bg-teal-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <Link href="/blogga">
-              <a className="relative px-7 py-4 bg-white dark:bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600">
-                <span className="flex items-center space-x-5">
-                  <SiReact className="h-5 w-5 text-sky-600" />
-                  <span className="pr-6 text-gray-900 dark:text-gray-100">
-                    Skräddarsydda hemsidor!
-                  </span>
-                </span>
-                <span className="pl-6 text-indigo-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition duration-200">
-                  Portfolio &rarr;
-                </span>
-              </a>
-            </Link>
-          </div>
-        </div>
-        <div className="grid gap-8 items-start my-2">
-          <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-fuchsia-600 to-primary-600  rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <Link href="/blogga">
-              <a className="relative px-7 py-4 bg-white dark:bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600">
-                <span className="flex items-center space-x-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-fuchsia-600 -rotate-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                    />
-                  </svg>
-                  <span className="pr-6 text-gray-900 dark:text-gray-100">
-                    För att du ska lyckas digitalt!
-                  </span>
-                </span>
-                <span className="pl-6 text-primary-400 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition duration-200">
-                  Blogg &rarr;
-                </span>
-              </a>
-            </Link>
-          </div>
-        </div>
-      </div>
+      <EmailCTA />
+
+
+
+
+
+
     </section>
   )
 }

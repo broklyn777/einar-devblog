@@ -7,7 +7,7 @@ const EmailCTA = ({
   title = 'Håll dig uppdaterad, få det senaste direkt i din brevlåda',
   description = '',
   list = 'monthly',
-  cta = 'Bli uppdaterad!',
+  cta = 'Jag vill bli uppdaterad!',
   embedded = false,
 }) => {
   const {
@@ -28,24 +28,26 @@ const EmailCTA = ({
   const onSubmit = (data) => subscribe(data)
 
   return (
-    <div className="">
-      <div className="mx-auto">
+    <div className="ic">
+      <div className="mx-auto flex">
         <div
           className={`${embedded ? 'px-4 py-2' : 'px-12 py-12'
-            } bg-gray-100 dark:bg-gray-800 rounded-xl lg:flex lg:items-center`}
+            } bg-gray-100 dark:bg-gray-800 rounded-xl grid items-center`}
         >
           {isSubmitSuccessful ? (
             <SuccessMessage handleReset={reset} />
           ) : (
             <>
-              <div className="lg:w-0 lg:flex-1">
+              <div className=" items-center ">
                 <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
 
               </div>
-              <div className="sm:w-full sm:max-w-md lg:ml-8 lg:flex-1">
-                <form className="sm:flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+
+
+              <div className="sm:w-full sm:max-w-md  xl:flex-1">
+                <form className="sm:flex  flex-col" onSubmit={handleSubmit(onSubmit)}>
                   <label htmlFor="email-address" className="sr-only">
-                    Email address
+                    Epost adress
                   </label>
                   <input
                     id="email"
@@ -76,6 +78,9 @@ const EmailCTA = ({
                 </form>
 
               </div>
+
+
+
             </>
           )}
         </div>

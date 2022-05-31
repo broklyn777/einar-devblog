@@ -9,7 +9,7 @@ import Hero from '@/components/Hero'
 const Home = ({ posts }) => {
   return (
     <div className="">
-      <Search />
+
       <Hero />
       {posts.map((post, index) => (
         <Link href={'/blog/' + post.slug} passHref key={index}>
