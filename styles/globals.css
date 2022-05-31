@@ -5,7 +5,7 @@
 /* html, body, heading */
 @layer base {
   body {
-    @apply bg-[#fefefe] text-neutral-700
+    @apply bg-[#ffffff] text-neutral-700
   }
 
   header {
