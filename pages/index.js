@@ -8,7 +8,7 @@ import Hero from '@/components/Hero'
 
 const Home = ({ posts }) => {
   return (
-    <div className="mt-5">
+    <div className="">
       <Search />
       <Hero />
       {posts.map((post, index) => (

@@ -8,7 +8,7 @@ import Footer from './Footer'
 import Search from './Search'
 // import Footer from './Footer'
 // import MobileNav from './MobileNav'
-// import ThemeSwitch from './ThemeSwitch'
+import ThemeSwitch from './ThemeSwitch'
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -40,7 +40,7 @@ const LayoutWrapper = ({ children }) => {
               <p className="ms-5 pointer lead my-auto">/blogga</p>
             </Link>
           </div>
-
+          <ThemeSwitch />
         </nav>
         <main className="mb-auto">{children}</main>
         <Footer />

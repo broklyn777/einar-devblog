@@ -22,10 +22,25 @@ export default function Footer() {
           <div>{` • `}</div>
           <Link href="/">{siteMetadata.title}</Link>
         </div>
-        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="https://github.com/broklyn777/einar-devblog">
-            Einars devBlog theme
-          </Link>
+        <div className='flex flex-1'>
+          <div className=" text-sm  text-gray-500 dark:text-gray-400">
+            <Link href="https://github.com/broklyn777/einar-devblog">
+              devBlog github  |
+            </Link>
+          </div>
+          <div>{`  `}</div>
+          <div className=" text-sm px-2 text-gray-500 dark:text-gray-400">
+            <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
+              Tims Starter theme  |
+            </Link>
+          </div>
+          <div>{`  `}</div>
+          <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
+            <Link href="https://vercel.com/dashboard">
+              Vercel
+            </Link>
+
+          </div>
         </div>
       </div>
     </footer>

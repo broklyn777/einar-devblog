@@ -14,76 +14,24 @@ author: ""
 
 posts/new-features-in-v1.mdx
 
-## Overview
+## how to:
 
-A post on the new features introduced in v1.0. New features:
+#### open link in new tab:
 
-First load JS decreased from 43kB to 39kB despite all the new features added!^[With the new changes in Nextjs 12, first load JS increase to 45kB.]
+```JS
+<Link href="https://twitter.com">
+       <a
+         className="my-3 font-bold text-sm leading-6 text-sky-500 hover:underline flex flex-row items-center"
+         target="_blank"
+         rel="noreferrer noopener"
+       >
+            ...sprider även gädje på twitter
+       </a>
+     </Link>
 
-See [upgrade guide](#upgrade-guide) below if you are migrating from v0 version of the template.
-
-## Theme colors
-
-You can easily modify the theme color by changing the primary attribute in the tailwind config file:
-
-```js:tailwind.config.js
-theme: {
-    colors: {
-      primary: colors.teal,
-      gray: colors.neutral,
-      ...
-    }
-  ...
-}
 ```
 
-The primary color attribute should be assigned an object with keys from 50, 100, 200 ... 900 and the corresponding color code values.
-
-Tailwind includes great default color palettes that can be used for theming your own website. Check out [customizing colors documentation page](https://tailwindcss.com/docs/customizing-colors) for the full range of options.
-
-Migrating from v1? You can revert to the previous theme by setting `primary` to `colors.sky` (Tailwind 2.2.2 and above, otherwise `colors.lightBlue`) and changing gray to `colors.gray`.
-
-From v1.1.2+, you can also customize the style of your code blocks easily by modifying the `css/prism.css` stylesheet. Token classnames are compatible with prismjs
-so you can copy and adapt token styles from a prismjs stylesheet e.g. [prism themes](https://github.com/PrismJS/prism-themes).
-
-## Xdm MDX compiler
-
-We switched the MDX bundler from [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) to [mdx-bundler](https://github.com/kentcdodds/mdx-bundler).
-This uses [xdm](https://github.com/wooorm/xdm) under the hood, the latest micromark 3 and remark, rehype libraries.
-
-**Warning:** If you were using custom remark or rehype libraries, please upgrade to micromark 3 compatible ones. If you are upgrading, please delete `node_modules` and `package-lock.json` to avoid having past dependencies related issues.
-
-[xdm](https://github.com/wooorm/xdm) contains multiple improvements over [@mdx-js/mdx](https://github.com/mdx-js/mdx), the compiler used internally by next-mdx-remote, but there might be some breaking behaviour changes.
-Please check your markdown output to verify.
-
-Some new possibilities include loading components directly in the mdx file using the import syntax and including js code which could be compiled and bundled at the build step.
-
-For example, the following jsx snippet can be used directly in an MDX file to render the page title component:
-
-The default configuration resolves all components relative to the `components` directory.
-
-**Note**:
-Components which require external image loaders also require additional esbuild configuration.
-Components which are dependent on global application state on lifecycle like the Nextjs `Link` component would also not work with this setup as each mdx file is built independently.
-For such cases, it is better to use component substitution.
-
-## Table of contents component
-
-Inspired by [Docusaurus](https://docusaurus.io/docs/next/markdown-features/inline-toc) and Gatsby's [gatsby-remark-table-of-contents](https://www.gatsbyjs.com/plugins/gatsby-remark-table-of-contents/),
-the `toc` variable containing all the top level headings of the document is passed to the MDX file and can be styled accordingly.
-To make generating a table of contents (TOC) simple, you can use the existing `` component.
-
-For example, the TOC in this post was generated with the following code:
-
-```jsx
-< toc={props.toc} exclude="Overview" toHeading={2} />
-```
-
-You can customise the headings that are displayed by configuring the `fromHeading` and `toHeading` props, or exclude particular headings
-by passing a string or a string array to the `exclude` prop. By default, all headings that are of depth 3 or smaller are indented. This can be configured by changing the `indentDepth` property.
-A `asDisclosure` prop can be used to render the TOC within an expandable disclosure element.
-
-Here's the search filter.
+#### Here's the search filter.
 
 ```jsx
 import { useEffect, useState } from "react";
@@ -248,11 +196,11 @@ Configure `siteMetadata.js` with the settings that correspond with the desired a
 
 ```js
 analytics: {
-    // supports plausible, simpleAnalytics or googleAnalytics
-    plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
-    simpleAnalytics: false, // true or false
-    googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
-  },
+ // supports plausible, simpleAnalytics or googleAnalytics
+ plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
+ simpleAnalytics: false, // true or false
+ googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
+},
 ```
 
 Custom events are also supported. You can import the `logEvent` function from `@components/analytics/[ANALYTICS-PROVIDER]` file and call it when
@@ -266,47 +214,47 @@ To enable, simply configure `siteMetadata.js` comments property with the desired
 
 ```js
 comment: {
-    // Select a provider and use the environment variables associated to it
-    // https://vercel.com/docs/environment-variables
-    provider: 'giscus', // supported providers: giscus, utterances, disqus
-    giscusConfig: {
-      // Visit the link below, and follow the steps in the 'configuration' section
-      // https://giscus.app/
-      repo: process.env.NEXT_PUBLIC_GISCUS_REPO,
-      repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
-      category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
-      categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
-      mapping: 'pathname', // supported options: pathname, url, title
-      reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
-      // Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable
-      metadata: '0',
-      // theme example: light, dark, dark_dimmed, dark_high_contrast
-      // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
-      // theme when dark mode
-      darkTheme: 'transparent_dark',
-      // If the theme option above is set to 'custom`
-      // please provide a link below to your custom theme css file.
-      // example: https://giscus.app/themes/custom_example.css
-      themeURL: '',
-    },
-    utterancesConfig: {
-      // Visit the link below, and follow the steps in the 'configuration' section
-      // https://utteranc.es/
-      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO,
-      issueTerm: '', // supported options: pathname, url, title
-      label: '', // label (optional): Comment 💬
-      // theme example: github-light, github-dark, preferred-color-scheme
-      // github-dark-orange, icy-dark, dark-blue, photon-dark, boxy-light
-      theme: '',
-      // theme when dark mode
-      darkTheme: '',
-    },
-    disqus: {
-      // https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-      shortname: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
-    },
-  },
+ // Select a provider and use the environment variables associated to it
+ // https://vercel.com/docs/environment-variables
+ provider: 'giscus', // supported providers: giscus, utterances, disqus
+ giscusConfig: {
+   // Visit the link below, and follow the steps in the 'configuration' section
+   // https://giscus.app/
+   repo: process.env.NEXT_PUBLIC_GISCUS_REPO,
+   repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
+   category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
+   categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
+   mapping: 'pathname', // supported options: pathname, url, title
+   reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
+   // Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable
+   metadata: '0',
+   // theme example: light, dark, dark_dimmed, dark_high_contrast
+   // transparent_dark, preferred_color_scheme, custom
+   theme: 'light',
+   // theme when dark mode
+   darkTheme: 'transparent_dark',
+   // If the theme option above is set to 'custom`
+   // please provide a link below to your custom theme css file.
+   // example: https://giscus.app/themes/custom_example.css
+   themeURL: '',
+ },
+ utterancesConfig: {
+   // Visit the link below, and follow the steps in the 'configuration' section
+   // https://utteranc.es/
+   repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO,
+   issueTerm: '', // supported options: pathname, url, title
+   label: '', // label (optional): Comment 💬
+   // theme example: github-light, github-dark, preferred-color-scheme
+   // github-dark-orange, icy-dark, dark-blue, photon-dark, boxy-light
+   theme: '',
+   // theme when dark mode
+   darkTheme: '',
+ },
+ disqus: {
+   // https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+   shortname: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
+ },
+},
 ```
 
 ## Multiple authors
@@ -366,13 +314,15 @@ Line highlighting and line numbers are now supported out of the box thanks to th
 The following javascript code block:
 
 ````
+
 ```js {1, 3-4} showLineNumbers
-var num1, num2, sum
-num1 = prompt('Enter first number')
-num2 = prompt('Enter second number')
-sum = parseInt(num1) + parseInt(num2) // "+" means "add"
-alert('Sum = ' + sum) // "+" means combine into a string
+var num1, num2, sum;
+num1 = prompt("Enter first number");
+num2 = prompt("Enter second number");
+sum = parseInt(num1) + parseInt(num2); // "+" means "add"
+alert("Sum = " + sum); // "+" means combine into a string
 ```
+
 ````
 
 will appear as:
@@ -457,8 +407,8 @@ Multiple citations [see @Nash1950; @Nash1951, page 50]
 
 is rendered to the following:
 
-Standard citation [@Nash1950]  
-In-text citations e.g. @Nash1951  
+Standard citation [@Nash1950]
+In-text citations e.g. @Nash1951
 Multiple citations [see @Nash1950; @Nash1951, page 50]
 
 **References:**
@@ -519,4 +469,8 @@ async redirects() {
     }
   ]
 }
+```
+
+```
+
 ```
